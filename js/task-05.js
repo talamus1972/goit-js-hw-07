@@ -7,16 +7,19 @@
 //   <button type="button" class="change-color">Change color</button>
 // </div>
 
-const btnChangeColor = document.querySelector(".change-color");
+const btnColor = document.querySelector(".change-color");
 const spanColor = document.querySelector(".color");
+const bodyBackgroundMain = document.querySelector('body');
 
-btnChangeColor.addEventListener('click', () => {
-  !
-    
-})
-
+const btnChangeColor = btnColor.addEventListener('click', () => {
+  bodyBackgroundMain.style.backgroundColor = getRandomHexColor();
+  spanColor.textContent = getRandomHexColor();
+});
+   
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
+    return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
+    .padStart(6, 0)}`;    
 }
+
+console.log(getRandomHexColor());
